@@ -82,4 +82,14 @@
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+  &.selected {
+    background-color: gray;
+    color: white;
+  }
+
+  &:hover {
+    background-color: lightgray;
+  }
 }
