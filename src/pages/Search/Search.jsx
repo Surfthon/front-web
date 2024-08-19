@@ -57,7 +57,7 @@ export default function Search() {
           rows={10}
           value={productInfo}
           onChange={handleTextChange}
-          placeholder="설명을 적어주세요"
+          placeholder="프로젝트 설명을 적어주세요"
           className="custom-textarea"
         />
 
