@@ -22,7 +22,7 @@
 }
 
 .header-logo {
-  font-size: 1.4rem;
+  font-size: 2rem;
   font-weight: bold;
   text-decoration: none; /* 밑줄 제거 */
   color: white;
@@ -44,5 +44,23 @@
   &.active {
     text-decoration: none;
     color: inherit;
+  }
+}
+
+@media (max-width: 1250px) {
+  .header-logo {
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-decoration: none; /* 밑줄 제거 */
+    color: white;
+  }
+}
+
+@media (max-width: 800px) {
+  .header-logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none; /* 밑줄 제거 */
+    color: white;
   }
 }

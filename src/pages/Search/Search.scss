@@ -27,21 +27,8 @@
   justify-content: space-between;
 }
 .page-title-text {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
-}
-.preview-item {
-  margin-top: 1rem;
-
-  .pre-title {
-    font-size: 1.1rem;
-    font-weight: bold;
-  }
-
-  .pre-input {
-    font-size: 0.9rem;
-    border-color: rgb(122, 134, 214);
-  }
 }
 
 .overlay {
@@ -57,20 +44,36 @@
   background-color: white;
   margin-top: 20px;
   color: #85a7ff;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   border: 0.2rem solid #85a7ff;
   border-radius: 1rem;
   padding: 0.7rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 @media (max-width: 800px) {
+  .page-title-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
   .page-background {
     padding: 1rem;
   }
   .search-page {
-    margin-top: 0.5rem;
+    margin-top: 200px;
     min-width: 90vw;
+  }
+  .find-button {
+    background-color: white;
+    margin-top: 20px;
+    color: #85a7ff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 0.2rem solid #85a7ff;
+    border-radius: 1rem;
+    padding: 0.7rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
