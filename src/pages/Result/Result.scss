@@ -84,6 +84,25 @@
   }
 }
 
+.center-box {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.center-button {
+  border: none;
+  background-color: #85a7ff;
+  color: white;
+  padding: 0.02rem 3rem;
+  text-align: center;
+  font-size: 2rem;
+  cursor: pointer;
+  display: inline-block;
+  clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%);
+}
+
 .category-button {
   background-color: white;
   color: #85a7ff;

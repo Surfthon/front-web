@@ -3,6 +3,11 @@ import './Result.scss';
 import { Pagination } from 'antd';
 import Category from '../../components/Category/Category';
 import { useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faCaretUp,
+  faCaretDown,
+} from '@fortawesome/free-solid-svg-icons';
 
 export default function Result() {
   const location = useLocation();
@@ -146,22 +151,46 @@ export default function Result() {
     );
   };
 
+  // 카테고리 영역 가시성 상태 관리
+  const [isCategoryVisible, setIsCategoryVisible] =
+    useState(true);
+
+  // 버튼 클릭 핸들러 - 카테고리 가시성 토글 및 아이콘 변경
+  const handleCenterButtonClick = () => {
+    setIsCategoryVisible(!isCategoryVisible);
+  };
   return (
     <div className="page">
-      <div className="category-background">
-        <div className="categoryButtons">
-          {categories.map((category, index) => (
-            <button
-              key={index}
-              className={`category-button ${
-                selectedCategories[index] ? 'selected' : ''
-              }`}
-              onClick={() => handleCategoryClick(index)}
-            >
-              # {category}
-            </button>
-          ))}
+      {isCategoryVisible && (
+        <div className="category-background">
+          <div className="categoryButtons">
+            {categories.map((category, index) => (
+              <button
+                key={index}
+                className={`category-button ${
+                  selectedCategories[index]
+                    ? 'selected'
+                    : ''
+                }`}
+                onClick={() => handleCategoryClick(index)}
+              >
+                # {category}
+              </button>
+            ))}
+          </div>
         </div>
+      )}
+      <div className="center-box">
+        <button
+          className="center-button"
+          onClick={handleCenterButtonClick}
+        >
+          <FontAwesomeIcon
+            icon={
+              isCategoryVisible ? faCaretUp : faCaretDown
+            }
+          />
+        </button>
       </div>
       <div className="searchResults">
         {/* 공모전 검색 결과  */}
