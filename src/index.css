@@ -11,8 +11,7 @@ body {
 }
 @font-face {
   font-family: 'HannaPro';
-  src: url('./fonts/otf/BMYEONSUNG_otf.otf')
-    format('opentype');
+  src: url('./fonts/otf/BMJUA_otf.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
