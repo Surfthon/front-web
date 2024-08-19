@@ -18,7 +18,7 @@
   .buttons {
     margin-top: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* 요소들을 오른쪽 정렬 */
   }
 }
 
@@ -55,6 +55,7 @@
 
 .detail-button {
   background-color: white;
+  margin-top: 20px;
   color: #85a7ff;
   font-size: 1.3rem;
   font-weight: bold;

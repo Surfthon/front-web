@@ -16,7 +16,7 @@
     flex-wrap: wrap;
     margin-left: 6rem;
     margin-right: 6rem;
-    gap: 2rem;
+    gap: 1.2rem;
   }
 }
 
@@ -63,6 +63,7 @@
 
         .title {
           font-size: 1.8rem;
+          font-weight: bold;
         }
 
         .host {
@@ -203,6 +204,7 @@
 
           .title {
             font-size: 1.5rem;
+            font-weight: bold;
           }
 
           .host {
@@ -240,5 +242,17 @@
     cursor: pointer;
     display: inline-block;
     clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%);
+  }
+
+  .detail-button {
+    background-color: white;
+    color: #85a7ff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 0.2rem solid #85a7ff;
+    border-radius: 1rem;
+    padding: 0.7rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
