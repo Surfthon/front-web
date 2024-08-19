@@ -37,121 +37,123 @@
         margin-left: 1rem;
         margin-right: 1rem;
         gap: 2rem;
-    }
+      }
 
-    .searchResults {
-
+      .searchResults {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(400px, 1fr)
+        );
         grid-auto-rows: minmax(100px, auto);
         gap: 1rem;
 
         .result {
-            background-color: white;
-            border: 1px solid black;
-            padding: 1rem;
-            margin: 1rem;
-            display: flex;
-            gap: 1rem;
-
-            img {
-                width: 40%;
-                height: 100%;
-            }
-
-            .dataFlexColumn {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-
-                .categorys {
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 1rem;
-                    margin-bottom: 1rem;
-                }
-
-                .data {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.5rem;
-
-                    .title {
-                        font-size: 2rem;
-                    }
-
-                    .host {
-                        font-size: 1.2rem;
-                        color: grey;
-                    }
-
-                    .day {
-                        font-size: 1.6rem;
-
-                    }
-                }
-
-                button {
-                    margin-top: auto;
-                    align-self: flex-end;
-                }
-            }
-
-        .categorys {
+          background-color: white;
+          border: 1px solid black;
+          padding: 1rem;
+          margin: 1rem;
           display: flex;
-          flex-wrap: wrap;
           gap: 1rem;
-          margin-bottom: 1rem;
-        }
 
-        .data {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-
-          .title {
-            font-size: 2rem;
+          img {
+            width: 40%;
+            height: 100%;
           }
 
-          .host {
-            font-size: 1.2rem;
-            color: grey;
+          .dataFlexColumn {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .categorys {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 1rem;
+              margin-bottom: 1rem;
+            }
+
+            .data {
+              display: flex;
+              flex-direction: column;
+              gap: 0.5rem;
+
+              .title {
+                font-size: 2rem;
+              }
+
+              .host {
+                font-size: 1.2rem;
+                color: grey;
+              }
+
+              .day {
+                font-size: 1.6rem;
+              }
+            }
+
+            button {
+              margin-top: auto;
+              align-self: flex-end;
+            }
           }
 
-          .day {
-            font-size: 1.6rem;
+          .categorys {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
           }
-        }
 
-        button {
-          margin-top: auto;
-          align-self: flex-end;
+          .data {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            .title {
+              font-size: 2rem;
+            }
+
+            .host {
+              font-size: 1.2rem;
+              color: grey;
+            }
+
+            .day {
+              font-size: 1.6rem;
+            }
+          }
+
+          button {
+            margin-top: auto;
+            align-self: flex-end;
+          }
         }
       }
     }
   }
-}
 
-.category-button {
-  background-color: white;
-  color: #85a7ff;
-  font-size: 1.05rem;
-  font-weight: bold;
-  border: 0.2rem solid #85a7ff;
-  border-radius: 1rem;
-  padding: 0.5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  .category-button {
+    background-color: white;
+    color: #85a7ff;
+    font-size: 1.05rem;
+    font-weight: bold;
+    border: 0.2rem solid #85a7ff;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 
-  &.selected {
-    border: 0.2rem solid rgb(185, 185, 185);
-    color: rgb(185, 185, 185);
-  }
+    &.selected {
+      border: 0.2rem solid rgb(185, 185, 185);
+      color: rgb(185, 185, 185);
+    }
 
-  &:hover {
-    background-color: lightgray;
+    &:hover {
+      background-color: lightgray;
+    }
   }
 }
