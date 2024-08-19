@@ -72,11 +72,11 @@
 }
 
 .category-button {
-  background-color: #85a7ff;
-  color: white;
+  background-color: white;
+  color: #85a7ff;
   font-size: 1.05rem;
   font-weight: bold;
-  border: none;
+  border: 0.2rem solid #85a7ff;
   border-radius: 1rem;
   padding: 0.5rem;
   padding-left: 1.5rem;
@@ -85,11 +85,8 @@
   transition: background-color 0.3s, color 0.3s;
 
   &.selected {
-    background-color: gray;
-    color: white;
-  }
-
-  &:hover {
-    background-color: lightgray;
+    border: 0.2rem solid rgb(185, 185, 185);
+    background-color: white;
+    color: rgb(185, 185, 185);
   }
 }
