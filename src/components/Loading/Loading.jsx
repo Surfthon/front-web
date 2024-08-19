@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import RobotImage from '../../assets/robot.png';
+import RobotImage from '../../assets/trophy.png';
 import './Loading.scss';
 import { Modal } from 'antd';
 

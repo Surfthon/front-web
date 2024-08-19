@@ -54,7 +54,7 @@ export default function Search() {
       {isLoading && (
         <>
           <div className="overlay"></div>
-          <Loading text={'후기 폼을 생성중입니다'} />
+          <Loading text={'공모전 정보를 불러오는 중'} />
         </>
       )}
       <div className="search-page">
