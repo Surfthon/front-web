@@ -26,6 +26,10 @@
   display: flex;
   justify-content: space-between;
 }
+.page-title-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 .preview-item {
   margin-top: 1rem;
 
@@ -49,6 +53,17 @@
   z-index: 1;
 }
 
+.detail-button {
+  background-color: white;
+  color: #85a7ff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: 0.2rem solid #85a7ff;
+  border-radius: 1rem;
+  padding: 0.7rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
 @media (max-width: 800px) {
   .page-background {
     padding: 1rem;

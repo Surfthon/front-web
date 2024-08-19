@@ -59,21 +59,21 @@ export default function Search() {
       )}
       <div className="search-page">
         <div className="page-title">
-          <h3>제품 설명</h3>
+          <p className="page-title-text">제품 설명</p>
         </div>
         <TextArea
           rows={10}
           value={productInfo}
           onChange={handleTextChange}
         />
+
         <div className="buttons">
-          <Button
-            type="primary"
-            className="button"
+          <button
+            className="detail-button"
             onClick={handleSubmit}
           >
             AI 요청
-          </Button>
+          </button>
         </div>
       </div>
     </div>
