@@ -1,6 +1,7 @@
 .page {
   width: 100%;
   margin: 0;
+  background-color: #f5f5f5;
 
   .category-background {
     background-color: white;
@@ -9,72 +10,75 @@
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
+
   .categoryButtons {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 4rem;
-    margin-right: 4rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
     gap: 2rem;
   }
+}
 
-  .searchResults {
-    display: grid;
-    margin: 2rem;
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(400px, 1fr)
-    );
-    grid-auto-rows: minmax(100px, auto);
+.searchResults {
+  display: grid;
+  margin: 2rem 4rem;
+
+  /* 기본적으로 최대 2개의 열을 고정하고, 각 항목의 최소 크기를 유지 */
+  grid-template-columns: repeat(2, minmax(650px, 1fr));
+  grid-auto-rows: minmax(100px, auto);
+  gap: 1rem;
+
+  .result {
+    background-color: white;
+    border: none;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin: 1rem;
+    display: flex;
     gap: 1rem;
 
-    .result {
-      background-color: white;
-      border: 1px solid black;
-      padding: 1rem;
-      margin: 1rem;
-      display: flex;
-      gap: 1rem;
+    img {
+      width: 40%;
+      height: 100%;
+    }
 
-      img {
-        width: 40%;
-        height: 100%;
+    .dataFlexColumn {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .categorys {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 1rem;
       }
 
-      .dataFlexColumn {
-        width: 100%;
+      .data {
         display: flex;
         flex-direction: column;
+        margin-top: 1.2rem;
+        gap: 0.5rem;
 
-        .categorys {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 1rem;
-          margin-bottom: 1rem;
+        .title {
+          font-size: 1.8rem;
         }
 
-        .data {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-
-          .title {
-            font-size: 2rem;
-          }
-
-          .host {
-            font-size: 1.2rem;
-            color: grey;
-          }
-
-          .day {
-            font-size: 1.6rem;
-          }
+        .host {
+          font-size: 1.2rem;
+          color: grey;
         }
 
-        button {
-          margin-top: auto;
-          align-self: flex-end;
+        .day {
+          margin-top: 2rem;
+          font-size: 1.6rem;
         }
+      }
+
+      button {
+        margin-top: auto;
+        align-self: flex-end;
       }
     }
   }
@@ -97,5 +101,24 @@
     border: 0.2rem solid rgb(185, 185, 185);
     background-color: white;
     color: rgb(185, 185, 185);
+  }
+}
+
+.detail-button {
+  background-color: white;
+  color: #85a7ff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: 0.2rem solid #85a7ff;
+  border-radius: 1rem;
+  padding: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+/* 화면이 1380px 이하일 때는 1개의 열로 변경 */
+@media (max-width: 1380px) {
+  .searchResults {
+    grid-template-columns: 1fr;
   }
 }

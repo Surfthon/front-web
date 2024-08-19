@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 export default function Header() {
   return (
     <div className="main-header">
-      <NavLink to="/result" className="header-logo">
+      <NavLink to="/" className="header-logo">
         Merge-Halle
       </NavLink>
     </div>
