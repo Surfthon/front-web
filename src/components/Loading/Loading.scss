@@ -1,0 +1,15 @@
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  z-index: 100;
+
+  img {
+    margin-left: 50px;
+    width: 100px;
+    height: 100px;
+  }
+}
