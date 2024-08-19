@@ -50,7 +50,7 @@ export default function Search() {
   };
 
   return (
-    <div className="page-background">
+    <>
       {isLoading && (
         <>
           <div className="overlay"></div>
@@ -59,23 +59,24 @@ export default function Search() {
       )}
       <div className="search-page">
         <div className="page-title">
-          <p className="page-title-text">제품 설명</p>
+          <p className="page-title-text">프로젝트 설명</p>
         </div>
         <TextArea
           rows={10}
           value={productInfo}
           onChange={handleTextChange}
+          placeholder="설명을 적어주세요"
         />
 
         <div className="buttons">
           <button
-            className="detail-button"
+            className="find-button"
             onClick={handleSubmit}
           >
-            AI 요청
+            공모전 찾아보기
           </button>
         </div>
       </div>
-    </div>
+    </>
   );
 }
