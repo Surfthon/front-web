@@ -43,56 +43,39 @@ export default function Result() {
       ],
     },
     {
-      title: '개발자 경진대회',
-      imageUrl: 'https://example.com/image3.jpg',
-      contestUrl: 'https://example.com/contest3',
-      deadLine: '2024-10-15',
-      host: 'IT 커뮤니티',
+      title: 'AI 공모전',
+      imageUrl: 'https://example.com/image1.jpg',
+      contestUrl: 'https://example.com/contest1',
+      deadLine: '2024-12-31',
+      host: 'AI 주최기관',
       category: [
-        '개발',
-        '프로그래밍',
-        '웹 개발',
-        '모바일 개발',
-        '오픈소스',
+        'AI',
+        '데이터 분석',
+        '머신러닝',
+        '딥러닝',
+        '기술',
       ],
     },
-    {
-      title: '기획 아이디어 공모전',
-      imageUrl: 'https://example.com/image4.jpg',
-      contestUrl: 'https://example.com/contest4',
-      deadLine: '2024-09-20',
-      host: '기획자 모임',
-      category: [
-        '기획',
-        '창의성',
-        '아이디어',
-        '비즈니스',
-        '마케팅',
-      ],
-    },
-    {
-      title: '환경 보호 공모전',
-      imageUrl: 'https://example.com/image5.jpg',
-      contestUrl: 'https://example.com/contest5',
-      deadLine: '2024-08-25',
-      host: '환경부',
-      category: [
-        '환경',
-        '지속 가능성',
-        '생태계 보호',
-        '재활용',
-        '에너지 절약',
-      ],
-    },
-    // 예시 데이터 추가
   ];
 
   // location에서 listData를 받아옴, 없으면 예시 데이터로 설정
   const listData = location.state?.listData || exampleData;
 
+  // 중복된 title 제거
+  const uniqueListData = listData.reduce((acc, current) => {
+    const x = acc.find(
+      (item) => item.title === current.title
+    );
+    if (!x) {
+      return acc.concat([current]);
+    } else {
+      return acc;
+    }
+  }, []);
+
   // 카테고리 추출 및 중복 제거
   const categories = Array.from(
-    new Set(listData.flatMap((item) => item.category))
+    new Set(uniqueListData.flatMap((item) => item.category))
   );
 
   // 클릭된 버튼 상태 관리
@@ -106,7 +89,7 @@ export default function Result() {
   const itemsPerPage = 10;
 
   // 선택되지 않은 카테고리 필터링
-  const filteredListData = listData.filter((item) =>
+  const filteredListData = uniqueListData.filter((item) =>
     item.category.some((cat) => {
       const catIndex = categories.indexOf(cat);
       return (
@@ -159,6 +142,7 @@ export default function Result() {
   const handleCenterButtonClick = () => {
     setIsCategoryVisible(!isCategoryVisible);
   };
+
   return (
     <div className="page">
       {isCategoryVisible && (
@@ -224,13 +208,19 @@ export default function Result() {
                         : 'inherit',
                   }}
                 >
-                  D-
                   {Math.ceil(
                     (new Date(item.deadLine) - new Date()) /
                       (1000 * 60 * 60 * 24)
-                  )}
+                  ) <= 0
+                    ? 'D-day'
+                    : `D-${Math.ceil(
+                        (new Date(item.deadLine) -
+                          new Date()) /
+                          (1000 * 60 * 60 * 24)
+                      )}`}
                 </span>
               </div>
+
               <div className="detail-box">
                 <button
                   className="detail-button"
