@@ -25,7 +25,7 @@
   margin: 2rem 4rem;
 
   /* 기본적으로 최대 2개의 열을 고정하고, 각 항목의 최소 크기를 유지 */
-  grid-template-columns: repeat(2, minmax(650px, 1fr));
+  grid-template-columns: repeat(2, minmax(550px, 1fr));
   grid-auto-rows: minmax(100px, auto);
   gap: 1rem;
 
@@ -110,7 +110,7 @@
   font-weight: bold;
   border: 0.2rem solid #85a7ff;
   border-radius: 1rem;
-  padding: 0.5rem;
+  padding: 0.25rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   cursor: pointer;
@@ -136,8 +136,109 @@
 }
 
 /* 화면이 1380px 이하일 때는 1개의 열로 변경 */
-@media (max-width: 1380px) {
+@media (max-width: 900px) {
+  .page {
+    width: 100%;
+    margin: 0;
+    background-color: #f5f5f5;
+
+    .category-background {
+      background-color: white;
+      display: flex;
+      align-items: center;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      justify-content: center; /* 모바일에서 중앙 정렬 */
+    }
+
+    .categoryButtons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* 모바일에서 버튼들을 중앙에 정렬 */
+      gap: 1rem; /* 간격을 조금 줄임 */
+      margin: 0;
+    }
+  }
+
   .searchResults {
+    display: grid;
+    margin: 2rem 1rem;
+
+    /* 기본적으로 1개의 열을 사용하고 각 항목의 최소 크기를 유지 */
     grid-template-columns: 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    gap: 1rem;
+
+    .result {
+      background-color: white;
+      border: none;
+      border-radius: 1rem;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      img {
+        width: 100%; /* 이미지도 전체 너비로 */
+        height: auto;
+        border-radius: 0.5rem;
+      }
+
+      .dataFlexColumn {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .categorys {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+          margin-bottom: 1rem;
+        }
+
+        .data {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+
+          .title {
+            font-size: 1.5rem;
+          }
+
+          .host {
+            font-size: 1rem;
+            color: grey;
+          }
+
+          .day {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+          }
+        }
+
+        button {
+          margin-top: auto;
+          align-self: center; /* 버튼을 중앙에 정렬 */
+        }
+      }
+    }
+  }
+
+  .center-box {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+
+  .center-button {
+    border: none;
+    background-color: #85a7ff;
+    color: white;
+    padding: 0.25rem 2rem;
+    font-size: 1.5rem; /* 버튼 크기를 줄임 */
+    cursor: pointer;
+    display: inline-block;
+    clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%);
   }
 }

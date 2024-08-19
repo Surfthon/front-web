@@ -48,3 +48,13 @@
   opacity: 0.4;
   z-index: 1;
 }
+
+@media (max-width: 800px) {
+  .page-background {
+    padding: 1rem;
+  }
+  .search-page {
+    margin-top: 0.5rem;
+    min-width: 90vw;
+  }
+}
