@@ -40,6 +40,10 @@
   z-index: 1;
 }
 
+.custom-textarea {
+  font-size: 1.1rem; /* 원하는 크기로 변경 */
+}
+
 .find-button {
   background-color: white;
   margin-top: 20px;
@@ -54,7 +58,7 @@
 }
 @media (max-width: 800px) {
   .page-title-text {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: bold;
   }
   .page-background {
@@ -68,7 +72,7 @@
     background-color: white;
     margin-top: 20px;
     color: #85a7ff;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: bold;
     border: 0.2rem solid #85a7ff;
     border-radius: 1rem;

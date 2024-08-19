@@ -66,6 +66,7 @@ export default function Search() {
           value={productInfo}
           onChange={handleTextChange}
           placeholder="설명을 적어주세요"
+          className="custom-textarea"
         />
 
         <div className="buttons">
