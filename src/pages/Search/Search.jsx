@@ -28,7 +28,7 @@ export default function Search() {
     setIsLoading(true); // 요청을 보내기 전 로딩 상태로 변경
     try {
       const response = await axios.get(
-        'http://surfthon.kro.kr/api/contest?description=' +
+        'https://surfthon.kro.kr/api/contest?description=' +
           `${productInfo}`
       );
 
