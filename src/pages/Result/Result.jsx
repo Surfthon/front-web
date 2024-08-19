@@ -198,8 +198,7 @@ export default function Result() {
           <div key={index} className="result">
             <img
               className="post-image"
-              // src={item.imageUrl} 서버에서는 이걸로 가져오면 됨
-              src="https://cf-cpi.campuspick.com/activity/1723091338188966.jpg"
+              src={item.imageUrl} //서버에서는 이걸로 가져오면 됨
               alt={`${item.title} 포스터`}
             />
             <div className="dataFlexColumn">
