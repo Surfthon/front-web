@@ -1,0 +1,37 @@
+.page{
+    width: 100%;
+    .searchResults {
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        grid-template-rows: repeat(5, 1fr); 
+        gap: 1rem; 
+    
+        .result {
+            background-color: white;
+            border: 1px solid black;
+            padding: 1rem;
+            margin: 1rem;
+            display: flex;
+            gap: 1rem;
+    
+            img{
+                width: 40%;
+                height: 100%;
+            }
+    
+            .dataFlexColumn{
+                display: flex;
+                flex-direction: column;
+                
+    
+                .categorys{
+                    display: flex;
+                    gap: 1rem;
+                }
+            }
+        }
+    
+    }
+}
+
