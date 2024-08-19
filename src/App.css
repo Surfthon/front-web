@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   height: 100vh;
-  background-color: #ffffff;
-  width: 90vw;
+  background-color: #dedede;
+  width: 100vw;
   margin: 0 auto; /* This centers the content */
 }

@@ -38,18 +38,20 @@ export default function Result() {
 
   return (
     <div className="page">
-      <div className="categoryButtons">
-        {categories.map((category, index) => (
-          <button
-            key={index}
-            className={`category-button ${
-              selectedCategories[index] ? 'selected' : ''
-            }`}
-            onClick={() => handleCategoryClick(index)}
-          >
-            # {category}
-          </button>
-        ))}
+      <div className="category-background">
+        <div className="categoryButtons">
+          {categories.map((category, index) => (
+            <button
+              key={index}
+              className={`category-button ${
+                selectedCategories[index] ? 'selected' : ''
+              }`}
+              onClick={() => handleCategoryClick(index)}
+            >
+              # {category}
+            </button>
+          ))}
+        </div>
       </div>
       <div className="searchResults">
         {/* 공모전 검색 결과  */}

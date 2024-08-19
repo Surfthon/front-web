@@ -18,8 +18,8 @@ function App() {
     <>
       <Routes>
         <Route element={<Layout />}>
-          <Route path='/' element={<Search/>} />
-          <Route path='/result' element={<Result/>} />
+          <Route path="/" element={<Search />} />
+          <Route path="/result" element={<Result />} />
         </Route>
       </Routes>
     </>
