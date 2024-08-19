@@ -27,14 +27,12 @@ export default function Search() {
     console.log('서버에 보내는 값', productInfo);
     setIsLoading(true); // 요청을 보내기 전 로딩 상태로 변경
     try {
-      const response = await axios.post(
-        'https://betatest.p-e.kr/api/question',
-        {
-          productDescription: productInfo,
-        }
+      const response = await axios.get(
+        'http://surfthon.kro.kr/api/contest?description=' +
+          `${productInfo}`
       );
 
-      if (response.status === 201) {
+      if (response.status === 200) {
         console.log('서버 응답:', response.data);
         setListData(response.data);
         navigate('/result', {
