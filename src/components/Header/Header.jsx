@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <div className="main-header">
       <NavLink to="/" className="header-logo">
-        도전 할래?
+        나랑 도전할래?
       </NavLink>
     </div>
   );

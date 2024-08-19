@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import RobotImage from '../../assets/robot.png';
 import './Loading.scss';
-import { Button, Modal } from 'antd';
+import { Modal } from 'antd';
 
 export default function Loading({ text }) {
   const [dots, setDots] = useState('');

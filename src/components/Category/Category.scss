@@ -9,3 +9,10 @@
   align-items: center;
   justify-content: center;
 }
+
+@media (max-width: 1250px) {
+  .category {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}

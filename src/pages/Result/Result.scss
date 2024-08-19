@@ -124,6 +124,11 @@
   }
 }
 
+.detail-box {
+  display: flex;
+  justify-content: flex-end; /* 요소들을 오른쪽 정렬 */
+  margin-top: 1rem;
+}
 .detail-button {
   background-color: white;
   color: #85a7ff;
@@ -135,8 +140,74 @@
   padding-left: 3rem;
   padding-right: 3rem;
 }
+@media (max-width: 1250px) {
+  .searchResults {
+    display: grid;
+    margin: 2rem 4rem;
 
-/* 화면이 1380px 이하일 때는 1개의 열로 변경 */
+    /* 기본적으로 최대 2개의 열을 고정하고, 각 항목의 최소 크기를 유지 */
+    grid-template-columns: repeat(1, minmax(550px, 1fr));
+    grid-auto-rows: minmax(100px, auto);
+    gap: 1rem;
+
+    .result {
+      background-color: white;
+      border: none;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 1rem;
+      display: flex;
+      gap: 1rem;
+
+      img {
+        width: 40%;
+        height: 100%;
+      }
+
+      .dataFlexColumn {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .categorys {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+          margin-bottom: 1rem;
+        }
+
+        .data {
+          display: flex;
+          flex-direction: column;
+          margin-top: 1.2rem;
+          gap: 0.5rem;
+
+          .title {
+            font-size: 1.8rem;
+            font-weight: bold;
+          }
+
+          .host {
+            font-size: 1.2rem;
+            color: grey;
+          }
+
+          .day {
+            margin-top: 7rem;
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+  }
+  .detail-box {
+    display: flex;
+    justify-content: flex-end; /* 요소들을 오른쪽 정렬 */
+    margin-top: 7rem;
+  }
+}
+
+/* 화면이 900px 이하일 때는 세로로 1개의 열로 변경 */
 @media (max-width: 900px) {
   .page {
     width: 100%;
@@ -163,7 +234,7 @@
 
   .searchResults {
     display: grid;
-    margin: 2rem 1rem;
+    padding: 1rem; /* 여백을 줄임 */
 
     /* 기본적으로 1개의 열을 사용하고 각 항목의 최소 크기를 유지 */
     grid-template-columns: 1fr;
@@ -244,6 +315,11 @@
     clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%);
   }
 
+  .detail-box {
+    display: flex;
+    justify-content: flex-end; /* 요소들을 오른쪽 정렬 */
+    margin-top: 4rem;
+  }
   .detail-button {
     background-color: white;
     color: #85a7ff;

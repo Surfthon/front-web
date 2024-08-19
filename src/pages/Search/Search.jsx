@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Search.scss';
-import { Input, Button, message } from 'antd';
+import { Input, message } from 'antd';
 import axios from 'axios';
 import Loading from '../../components/Loading/Loading';
 import { useNavigate } from 'react-router-dom';

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Result.scss';
 import { Pagination } from 'antd';
 import Category from '../../components/Category/Category';
@@ -232,14 +232,16 @@ export default function Result() {
                   )}
                 </span>
               </div>
-              <button
-                className="detail-button"
-                onClick={() =>
-                  window.open(item.contestUrl, '_blank')
-                }
-              >
-                자세히
-              </button>
+              <div className="detail-box">
+                <button
+                  className="detail-button"
+                  onClick={() =>
+                    window.open(item.contestUrl, '_blank')
+                  }
+                >
+                  자세히
+                </button>
+              </div>
             </div>
           </div>
         ))}
