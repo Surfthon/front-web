@@ -61,8 +61,8 @@ export default function Result() {
           <div className="dataFlexColumn">
             {/* 해당 공모전 카테고리 정보들 */}
             <div className="categorys">
-              <Category CategoryName={'AI'} />
-              <Category CategoryName={'AI'} />
+              {<Category CategoryName={'AI'} />}
+              {<Category CategoryName={'AI'} />}
             </div>
             <div className="data">
               <span className="title">공모전 타이틀</span>
@@ -74,19 +74,33 @@ export default function Result() {
         </div>
         {/*  */}
         <div className="result">
-          <img src="" alt="공모전 포스터 사진" />
+          <img
+            src="https://cf-cpi.campuspick.com/activity/1723091338188966.jpg"
+            alt="공모전 포스터 사진"
+          />
           <div className="dataFlexColumn">
             {/* 해당 공모전 카테고리 정보들 */}
             <div className="categorys">
-              <Category CategoryName={'AI'} />
-              <Category CategoryName={'AI'} />
+              {<Category CategoryName={'AI'} />}
+              {<Category CategoryName={'AI'} />}
             </div>
-            <h1>공모전 제목</h1>
-            <span>공모전 주최</span>
-            <span>D-12</span>
+            <div className="data">
+              <span className="title">공모전 타이틀</span>
+              <span className="host">공모전 주최</span>
+              <span className="day">D-12</span>
+            </div>
             <button>자세히</button>
           </div>
         </div>
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          padding: '2rem 0 ',
+        }}
+      >
+        <Pagination defaultCurrent={1} total={500} />
       </div>
     </div>
   );
