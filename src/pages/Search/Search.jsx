@@ -18,12 +18,6 @@ export default function Search() {
   };
 
   const handleSubmit = async () => {
-    if (productInfo.trim() === '') {
-      navigate('/result');
-      // productInfo가 빈 문자열인 경우 에러 메시지 표시
-      // message.error('입력 해주세요!');
-      return;
-    }
     console.log('서버에 보내는 값', productInfo);
     setIsLoading(true); // 요청을 보내기 전 로딩 상태로 변경
     try {

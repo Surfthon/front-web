@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Result.scss';
-import { Pagination } from 'antd';
+import { Pagination, message } from 'antd';
 import Category from '../../components/Category/Category';
 import { useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,55 +11,20 @@ import {
 
 export default function Result() {
   const location = useLocation();
+  const [listData, setListData] = useState(
+    location.state?.listData || []
+  );
+  const messageDisplayedRef = useRef(false);
 
-  // 예시 데이터
-  const exampleData = [
-    {
-      title: 'AI 공모전',
-      imageUrl: 'https://example.com/image1.jpg',
-      contestUrl: 'https://example.com/contest1',
-      deadLine: '2024-12-31',
-      host: 'AI 주최기관',
-      category: [
-        'AI',
-        '데이터 분석',
-        '머신러닝',
-        '딥러닝',
-        '기술',
-      ],
-    },
-    {
-      title: '디자인 혁신 공모전',
-      imageUrl: 'https://example.com/image2.jpg',
-      contestUrl: 'https://example.com/contest2',
-      deadLine: '2024-11-30',
-      host: '디자인 협회',
-      category: [
-        '디자인',
-        'UI/UX',
-        '그래픽 디자인',
-        '제품 디자인',
-        '브랜딩',
-      ],
-    },
-    {
-      title: 'AI 공모전',
-      imageUrl: 'https://example.com/image1.jpg',
-      contestUrl: 'https://example.com/contest1',
-      deadLine: '2024-12-31',
-      host: 'AI 주최기관',
-      category: [
-        'AI',
-        '데이터 분석',
-        '머신러닝',
-        '딥러닝',
-        '기술',
-      ],
-    },
-  ];
-
-  // location에서 listData를 받아옴, 없으면 예시 데이터로 설정
-  const listData = location.state?.listData || exampleData;
+  useEffect(() => {
+    if (
+      !messageDisplayedRef.current &&
+      (!listData || listData.length === 0)
+    ) {
+      message.warning('찾는 결과가 없습니다');
+      messageDisplayedRef.current = true;
+    }
+  }, [listData]);
 
   // 중복된 title 제거
   const uniqueListData = listData.reduce((acc, current) => {
@@ -73,9 +38,14 @@ export default function Result() {
     }
   }, []);
 
+  // 날짜 기준 오름차순 정렬
+  const sortedListData = uniqueListData.sort(
+    (a, b) => new Date(a.deadLine) - new Date(b.deadLine)
+  );
+
   // 카테고리 추출 및 중복 제거
   const categories = Array.from(
-    new Set(uniqueListData.flatMap((item) => item.category))
+    new Set(sortedListData.flatMap((item) => item.category))
   );
 
   // 클릭된 버튼 상태 관리
@@ -89,7 +59,7 @@ export default function Result() {
   const itemsPerPage = 10;
 
   // 선택되지 않은 카테고리 필터링
-  const filteredListData = uniqueListData.filter((item) =>
+  const filteredListData = sortedListData.filter((item) =>
     item.category.some((cat) => {
       const catIndex = categories.indexOf(cat);
       return (
