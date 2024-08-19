@@ -1,5 +1,6 @@
-.page{
+.page {
     width: 100%;
+
     .searchResults {
 
         display: grid;
@@ -15,19 +16,45 @@
             display: flex;
             gap: 1rem;
     
-            img{
+            img {
                 width: 40%;
                 height: 100%;
             }
     
-            .dataFlexColumn{
+            .dataFlexColumn {
+                width: 100%;
                 display: flex;
                 flex-direction: column;
                 
-    
-                .categorys{
+                .categorys {
                     display: flex;
+                    flex-wrap: wrap;
                     gap: 1rem;
+                    margin-bottom: 1rem;
+                }
+
+                .data {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                    .title {
+                        font-size: 2rem;
+                    }
+
+                    .host {
+                        font-size: 1.2rem;
+                        color: grey;
+                    }
+
+                    .day {
+                        font-size: 1.6rem;
+
+                    }
+                }
+
+                button {
+                    margin-top: auto; 
+                    align-self: flex-end;
                 }
             }
         }

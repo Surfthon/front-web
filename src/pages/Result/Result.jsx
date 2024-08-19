@@ -12,18 +12,27 @@ export default function Result() {
 		<div className="page">
 			<div className="categoryButtons"></div>
 			<div className="searchResults">
-                {/* 공모전 검색 결과  */}
+				{/* 공모전 검색 결과  */}
 				<div className="result">
-					<img src="https://cf-cpi.campuspick.com/activity/1723091338188966.jpg" alt="공모전 포스터 사진" />
+					<img
+						src="https://cf-cpi.campuspick.com/activity/1723091338188966.jpg"
+						alt="공모전 포스터 사진"
+					/>
 					<div className="dataFlexColumn">
 						{/* 해당 공모전 카테고리 정보들 */}
 						<div className="categorys">
 							{<Category CategoryName={"AI"} />}
 							{<Category CategoryName={"AI"} />}
+							{<Category CategoryName={"AI"} />}
+							{<Category CategoryName={"AI"} />}
+
 						</div>
-						<h1>공모전 제목</h1>
-						<span>공모전 주최</span>
-						<span>D-12</span>
+                        <div className="data">
+                            <span className="title">공모전 타이틀</span>
+						<span className="host">공모전 주최</span>
+						<span className="day">D-12</span>
+                        </div>
+						
 						<button>자세히</button>
 					</div>
 				</div>
